@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Монголын түүх</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Монголын түүх</h1>
+    <p class="lede">Хүннү гүрнээс өнөөг хүртэлх үе шатууд</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Хайх: нэр, хүн, үйл явдал…" aria-label="Хайх">
+      <span id="count" class="count"></span>
+    </div>
+
+    <nav id="ribbon" class="ribbon" aria-label="Цаг хугацааны шугам"></nav>
+
+    <section id="eras" class="eras" aria-live="polite"></section>
+    <p id="status" class="status"></p>
+  </main>
+
+  <dialog id="detail" class="detail">
+    <button class="close" type="button" aria-label="Хаах">×</button>
+    <div id="detail-body"></div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
