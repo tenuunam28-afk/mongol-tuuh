@@ -7,6 +7,8 @@
   --accent: #1e5aa8;
   --accent-soft: #e4ecf7;
   --gold: #c9962b;
+  --sea: #dfe7ee;
+  --land: #fbfaf7;
   --radius: 12px;
 }
 
@@ -20,6 +22,8 @@
     --accent: #6ea1e8;
     --accent-soft: #233348;
     --gold: #e0b357;
+    --sea: #11161d;
+    --land: #262a31;
   }
 }
 
@@ -123,3 +127,70 @@ main { max-width: 960px; margin: 0 auto; padding: 24px 16px 64px; }
 .events .y { color: var(--gold); font-weight: 600; white-space: nowrap; }
 
 mark { background: var(--gold); color: #1f1d1a; border-radius: 3px; padding: 0 2px; }
+
+/* Links between the timeline and map pages */
+.site-nav { display: flex; justify-content: center; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.site-nav a {
+  padding: 6px 14px;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.site-nav a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+
+/* Map page */
+.notice {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+}
+
+.slider label { display: block; font-weight: 600; margin-bottom: 6px; }
+.slider input { width: 100%; accent-color: var(--accent); }
+.slider-ends { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.85rem; }
+
+.map {
+  height: min(60vh, 520px);
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--sea);
+}
+
+.land { fill: var(--land); }
+.lake { fill: var(--sea); }
+.border.main { stroke: var(--accent); fill: var(--accent); }
+.border.vassal { stroke: var(--gold); fill: var(--gold); }
+
+.leaflet-tooltip.map-label {
+  padding: 0;
+  font: 600 0.85rem/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: none;
+  border: 0;
+  box-shadow: none;
+  text-shadow: 0 0 3px var(--bg), 0 0 3px var(--bg), 0 0 3px var(--bg);
+}
+
+.era-info {
+  margin-top: 16px;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.era-info .years { color: var(--gold); font-weight: 600; font-size: 0.9rem; }
+.era-info h2 { margin: 2px 0 6px; font-size: 1.3rem; }
+.era-info p { margin: 6px 0 0; }
+.era-info .meta { margin-top: 10px; }
+
+/* Leaflet's own controls follow the page theme */
+.leaflet-container { font: inherit; }
+.leaflet-bar a, .leaflet-bar a:hover { color: var(--text); background: var(--surface); border-color: var(--border); }
+.leaflet-control-attribution.leaflet-control { font-size: 0.7rem; color: var(--muted); background: color-mix(in srgb, var(--surface) 85%, transparent); }
+.leaflet-control-attribution a { color: var(--accent); }

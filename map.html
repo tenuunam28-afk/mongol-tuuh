@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Газрын зураг · Монголын түүх</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+    integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Монголын түүх</h1>
+    <p class="lede">Үе бүрийн нутаг дэвсгэр</p>
+    <nav class="site-nav" aria-label="Хуудас">
+      <a href="index.html">Он цагийн хэлхээс</a>
+      <a href="map.html" aria-current="page">Газрын зураг</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="notice" role="note">
+      <strong>Анхааруулга:</strong> Хил хязгаарыг ойролцоогоор үзүүлэв. Эртний улсуудын хил тодорхой бус,
+      байнга өөрчлөгдөж байсан бөгөөд эх сурвалжууд хоорондоо зөрүүтэй. Газрын зураг тухайн үеийн нэг оны
+      байдлыг харуулна.
+    </p>
+
+    <div class="slider">
+      <label for="era-slider">Үе сонгох</label>
+      <input id="era-slider" type="range" min="0" max="0" value="0" step="1" disabled>
+      <div class="slider-ends"><span id="slider-min"></span><span id="slider-max"></span></div>
+    </div>
+
+    <div id="map" class="map" role="region" aria-label="Газрын зураг"></div>
+
+    <section id="era-info" class="era-info" aria-live="polite"></section>
+    <p id="status" class="status"></p>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"
+    integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="common.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
