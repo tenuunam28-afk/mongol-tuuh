@@ -49,7 +49,7 @@ function renderEra(era, q) {
     : "";
   const events = era.events.length
     ? `<ol class="events">${era.events
-        .map((ev) => `<li><span class="y">${formatYear(ev.year)}</span><span>${highlight(ev.title, q)}</span></li>`)
+        .map((ev) => `<li><span class="y">${ev.approx ? "~" : ""}${formatYear(ev.year)}</span><span>${highlight(ev.title, q)}</span></li>`)
         .join("")}</ol>`
     : "";
 
